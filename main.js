@@ -6,8 +6,8 @@ function main()
   var game = new Game();
   gameNs.game = game;
   initCanvas();
-  /*game.Update();
-  game.draw();*/
+  game.update();
+  game.draw();
 }
 
 function initCanvas()
@@ -19,15 +19,26 @@ function initCanvas()
   canvas.height = window.innerHeight;
   var ctx = canvas.getContext("2d");
   document.body.appendChild(canvas);
+  gameNs.ctx = ctx;
+
+
 
   document.addEventListener("keydown", this.keyHandler, true);
+
+  this.img = new Image();
+  this.img.src = "Images/keys.png"
+
+
 }
 
 function keyHandler(e)
 {
   if(e.keyCode === 87 || e.keyCode === 38)//w key
   {
-      
+    gameNs.ctx.rect(20,20,0,0);
+    gameNs.ctx.lineWidth="6";
+    gameNs.ctx.strokeStyle = "red";
+    gameNs.ctx.stroke();
   }
   else if(e.keyCode === 65 || e.keyCode === 37)//a
   {
@@ -49,5 +60,5 @@ function keyHandler(e)
 
 function draw(game)
 {
-  game.draw;
+  game.draw();
 }
