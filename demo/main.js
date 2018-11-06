@@ -35,7 +35,7 @@ function keyHandler(e)
 {
   if(e.keyCode === 87 || e.keyCode === 38)//w key
   {
-    gameNs.ctx.rect(20,20,0,0);
+    gameNs.ctx.rect(50,5,150,150);
     gameNs.ctx.lineWidth="6";
     gameNs.ctx.strokeStyle = "red";
     gameNs.ctx.stroke();
@@ -56,6 +56,7 @@ function keyHandler(e)
   {
 
   }
+
 }
 
 function draw(game)

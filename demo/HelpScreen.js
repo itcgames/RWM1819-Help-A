@@ -26,7 +26,7 @@ class HelpScreen
     ctx.font = '55px Times New Roman';
 
     var image = this.img;
-    ctx.drawImage(image,0,0,800,800);
+    ctx.drawImage(image,20,0,800,800);
   }
 
 }
