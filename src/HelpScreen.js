@@ -8,7 +8,7 @@ class HelpScreen
     this.pressed = false;
 
     this.img = new Image();
-    this.img.src = "Images/keys.png"
+    this.img.src = "../Images/keys.png"
   }
 
   update()
