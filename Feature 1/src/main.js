@@ -106,6 +106,9 @@ function keyHandler(e)
     gameNs.ctx.strokeStyle = "red";
     gameNs.ctx.stroke();
   }
+  else {
+    gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+  }
 
 }
 

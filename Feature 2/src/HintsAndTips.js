@@ -3,37 +3,50 @@ class hintsAndTips
   constructor()
   {
     this.width = window.innerWidth
-    this height = window.innerHeight
+    this.height = window.innerHeight
     this.pressed = false
-    
+    this.hints = ""
+    this.count = 1
+    this.hintsArr =[
+        {
+          "hint":"pressing right arrow will make the player move right"
+        },
+        {
+          "hint":"holding the jump button will make you jump for longer"
+        },
+        {
+          "hint":"gravity is in effect, if you're not on solid ground you will fall!"
+        },
+        {
+          "hint":"You can't walk through walls!"
+        }
+      ]
   }
 
-  getHint()
-  {
-    if(localStorage.getItem("hintsAndTips")===null)
+    getHint()
     {
-      localStorage.setItem('hintsAndTips', JSON.stringify(this.hintsAndTips))
-    }
-    this.hintsAndTips = JSON.parse(localStorage.getItem('hintsAndTips'))
+      for(var i = 0; i < 4; i++)
+      {
+        this.hints = this.hintsArr[i].hint
+        document.write(this.hints)
+      }
 
-    if(this.count<1)
+    }
+
+    update()
     {
-      t
+      var canvas = document.getElementById('gameCanvas')
+      var ctx = canvas.getContext('2d')
+      this.getHint();
     }
-  }
 
-  update()
-  {
-    var canvas = document.getElementById('gameCanvas')
-    var ctx = canvas.getContext('2d')
-  }
+    render()
+    {
+      var canvas = document.getElementById("gameCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.clearRect(0,0, canvas.width, canvas.height);
+      document.body.style.background = "#FFFACD"
+      this.hint
+    }
 
-  render()
-  {
-    var canvas = document.getElementById("gameCanvas")
-    var ctx = canvas.getContext('2d')
-    ctx.clearRect(0,0,canvas.width,canvas.height)
-    document.body.style.background = "#FFFACD"
-    ctx.font = "55px Times New Roman"
   }
-}

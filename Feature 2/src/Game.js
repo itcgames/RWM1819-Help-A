@@ -1,5 +1,5 @@
 var gameNs = {};
-class Game()
+class Game
 {
   constructor()
   {
