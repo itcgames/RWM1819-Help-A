@@ -28,13 +28,7 @@ function initCanvas()
   document.body.appendChild(canvas);
   gameNs.ctx = ctx;
 
-
-
   document.addEventListener("keydown", this.keyHandler, true);
-
-
-
-
 }
 
 function keyHandler(e)

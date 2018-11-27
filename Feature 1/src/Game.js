@@ -3,7 +3,6 @@ class Game
 {
   constructor()
   {
-
     gameNs.helpScreen = new HelpScreen();
   }
 

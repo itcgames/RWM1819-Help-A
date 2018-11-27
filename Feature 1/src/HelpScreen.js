@@ -19,8 +19,8 @@ class HelpScreen
 
   render()
   {
-    var canvas = document.getElementById("gameCanvas");
-    var ctx = canvas.getContext("2d");
+    var canvas = document.getElementById('gameCanvas');
+    var ctx = canvas.getContext('2d');
     ctx.clearRect(0,0, canvas.width, canvas.height);
     document.body.style.background = "#FFFACD";
     ctx.font = '55px Times New Roman';

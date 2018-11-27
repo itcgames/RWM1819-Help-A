@@ -8,8 +8,8 @@ class Game
 
   update()
   {
-    gameNs.hintsAndTips.update()
-    gameNs.hintsAndTips.render()
+     gameNs.hintsAndTips.update()
+     gameNs.hintsAndTips.render()
   }
 
   draw()

@@ -5,9 +5,8 @@ class hintsAndTips
     this.width = window.innerWidth
     this.height = window.innerHeight
     this.pressed = false
-    this.hints = ""
-    this.count = 1
-    this.hintsArr =[
+    gameNs.count = 0
+    gameNs.hintsArr =[
         {
           "hint":"pressing right arrow will make the player move right"
         },
@@ -21,32 +20,56 @@ class hintsAndTips
           "hint":"You can't walk through walls!"
         }
       ]
+    gameNs.hints = gameNs.hintsArr[gameNs.count].hint
   }
 
-    getHint()
+  nextHint()
+  {
+    if(gameNs.count < 4)
     {
-      for(var i = 0; i < 4; i++)
+      gameNs.count = gameNs.count +1;
+    }
+    else
+    {
+      gameNs.count = 0
+    }
+
+    gameNs.hints = gameNs.hintsArr[gameNs.count].hint
+    gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+    }
+
+    prevHint()
+    {
+      if(gameNs.count > 0)
       {
-        this.hints = this.hintsArr[i].hint
-        document.write(this.hints)
+        gameNs.count = gameNs.count - 1;
+      }
+      else
+      {
+        gameNs.count = 3
       }
 
-    }
+      gameNs.hints = gameNs.hintsArr[gameNs.count].hint
+      gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+
+      }
 
     update()
     {
-      var canvas = document.getElementById('gameCanvas')
-      var ctx = canvas.getContext('2d')
-      this.getHint();
+      var canvas = document.getElementById('gameCanvas');
+      var ctx = canvas.getContext('2d');
+
     }
 
     render()
     {
-      var canvas = document.getElementById("gameCanvas");
-      var ctx = canvas.getContext("2d");
+      var canvas = document.getElementById('gameCanvas');
+      var ctx = canvas.getContext('2d');
       ctx.clearRect(0,0, canvas.width, canvas.height);
-      document.body.style.background = "#FFFACD"
-      this.hint
+      document.body.style.background = "#FFFACD";
+      ctx.font = '20px Arial';
+      ctx.fillStyle = "Black"
+      ctx.fillText(gameNs.hints, 0,100)
     }
 
   }
