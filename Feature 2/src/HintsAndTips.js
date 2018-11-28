@@ -25,7 +25,7 @@ class hintsAndTips
 
   nextHint()
   {
-    if(gameNs.count < 4)
+    if(gameNs.count < gameNs.hintsArr.length-1)
     {
       gameNs.count = gameNs.count +1;
     }
@@ -46,7 +46,8 @@ class hintsAndTips
       }
       else
       {
-        gameNs.count = 3
+        gameNs.count = gameNs.hintsArr.length-1
+
       }
 
       gameNs.hints = gameNs.hintsArr[gameNs.count].hint
@@ -67,9 +68,9 @@ class hintsAndTips
       var ctx = canvas.getContext('2d');
       ctx.clearRect(0,0, canvas.width, canvas.height);
       document.body.style.background = "#FFFACD";
-      ctx.font = '20px Arial';
+      ctx.font = '20px Impact';
       ctx.fillStyle = "Black"
-      ctx.fillText(gameNs.hints, 0,100)
+      ctx.fillText(gameNs.hints, 100,100)
     }
 
   }
