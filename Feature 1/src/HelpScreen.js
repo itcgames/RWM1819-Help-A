@@ -3,24 +3,33 @@ class HelpScreen
 
   constructor()
   {
+    this.img = new Image();
+    this.img.src = "RWM1819-Help-A/Feature 1/Images/keys.png"
+
+    var canvas = document.getElementById("mycanvas")
+    canvas.id = 'mycanvas';
+    mycanvas.width = window.innerWidth;
+    mycanvas.height = window.innerHeight;
+    mycanvas.style.position = "absolute";
+    mycanvas.style.left = this.img.offsetLeft;
+    mycanvas.style.top = this.img.offsetTop;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.pressed = false;
 
-    this.img = new Image();
-    this.img.src = "../Images/keys.png"
+
   }
 
   highlightW()
   {
-    gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+    gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
     gameNs.ctx.beginPath();
-    gameNs.ctx.rect(140,20,125,145);
+    gameNs.ctx.rect(520,410,125,145);
     gameNs.ctx.lineWidth="6";
     gameNs.ctx.strokeStyle = "red";
     gameNs.ctx.stroke();
     gameNs.ctx.beginPath();
-    gameNs.ctx.rect(570,20,125,145);
+    gameNs.ctx.rect(950,410,125,145);
     gameNs.ctx.lineWidth="6";
     gameNs.ctx.strokeStyle = "green";
     gameNs.ctx.stroke();
@@ -28,15 +37,15 @@ class HelpScreen
 
   highlightA()
 {
-  gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+  gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(19,190,125,145);
+  gameNs.ctx.rect(400,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
   gameNs.ctx.beginPath();
   gameNs.ctx
-  gameNs.ctx.rect(435,190,125,145);
+  gameNs.ctx.rect(810,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "green";
   gameNs.ctx.stroke();
@@ -44,14 +53,14 @@ class HelpScreen
 
 highLightS()
 {
-  gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+  gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(140,190,125,145);
+  gameNs.ctx.rect(520,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(570,190,125,145);
+  gameNs.ctx.rect(950,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "green";
   gameNs.ctx.stroke();
@@ -59,14 +68,14 @@ highLightS()
 
 highLightD()
 {
-  gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+  gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(270,190,125,145);
+  gameNs.ctx.rect(650,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(690,190,125,145);
+  gameNs.ctx.rect(1070,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "green";
   gameNs.ctx.stroke();
@@ -74,9 +83,9 @@ highLightD()
 
 highLightSpace()
 {
-  gameNs.ctx.clearRect(0,0,gameNs.canvas.width, gameNs.canvas.height)
+  gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(250,520,350,145);
+  gameNs.ctx.rect(620,870,370,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
@@ -90,14 +99,14 @@ highLightSpace()
 
   render()
   {
-    var canvas = document.getElementById('gameCanvas');
-    var ctx = canvas.getContext('2d');
-    ctx.clearRect(0,0, canvas.width, canvas.height);
+    var canvas = document.getElementById('mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    //ctx.clearRect(0,0, mycanvas.width, mycanvas.height);
     document.body.style.background = "#FFFACD";
     ctx.font = '55px Times New Roman';
 
     var image = this.img;
-    ctx.drawImage(image,20,0,800,800);
+    ctx.drawImage(image,400,400,800,700);
   }
 
 }

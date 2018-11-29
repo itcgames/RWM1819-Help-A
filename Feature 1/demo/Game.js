@@ -10,6 +10,7 @@ class Game
   {
     gameNs.helpScreen.update();
     gameNs.helpScreen.render();
+    this.draw()
   }
 
   draw()

@@ -8,19 +8,24 @@ class hintsAndTips
     gameNs.count = 0
     gameNs.hintsArr =[
         {
-          "hint":"pressing right arrow will make the player move right"
+          "hint":"Click on an object to move it, let go of the object to place the object."
         },
         {
-          "hint":"holding the jump button will make you jump for longer"
+          "hint":"Fans will blow the ball in the opposite direction, \n\nmagnets will attract the ball"
         },
         {
-          "hint":"gravity is in effect, if you're not on solid ground you will fall!"
+          "hint":"trampolines make the ball fly back up"
         },
         {
-          "hint":"You can't walk through walls!"
+          "hint":"Get the ball to the cup as quickly as possible for a higher score."
+        },
+        {
+          "hint":"Use ramps to change the direction of the ball."
         }
       ]
+    gameNs.hintNum = "Hint #"+(gameNs.count+1)
     gameNs.hints = gameNs.hintsArr[gameNs.count].hint
+
   }
 
   nextHint()
@@ -28,6 +33,7 @@ class hintsAndTips
     if(gameNs.count < gameNs.hintsArr.length-1)
     {
       gameNs.count = gameNs.count +1;
+      gameNs.hintNum = "Hint #"+(gameNs.count)
     }
     else
     {
@@ -43,6 +49,7 @@ class hintsAndTips
       if(gameNs.count > 0)
       {
         gameNs.count = gameNs.count - 1;
+        gameNs.hintNum = "Hint #"+(gameNs.count)
       }
       else
       {
@@ -59,18 +66,19 @@ class hintsAndTips
     {
       var canvas = document.getElementById('gameCanvas');
       var ctx = canvas.getContext('2d');
-
+      gameNs.hintNum = "Hint #"+(gameNs.count)
     }
 
     render()
     {
-      var canvas = document.getElementById('gameCanvas');
-      var ctx = canvas.getContext('2d');
-      ctx.clearRect(0,0, canvas.width, canvas.height);
+      var canvas = document.getElementById('mycanvas');
+      var ctx = mycanvas.getContext('2d');
+      //ctx.clearRect(0,0, mycanvas.width, mycanvas.height);
       document.body.style.background = "#FFFACD";
-      ctx.font = '20px Impact';
+      ctx.font = '45px Impact';
       ctx.fillStyle = "Black"
-      ctx.fillText(gameNs.hints, 100,100)
+      ctx.fillText(gameNs.hints, 300,650)
+      ctx.fillText(gameNs.hintNum, 800,350)
     }
 
   }

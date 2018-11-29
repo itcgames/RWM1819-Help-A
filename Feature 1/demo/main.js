@@ -5,7 +5,6 @@ function main()
   initCanvas();
   var game = new Game();
   gameNs.game = game;
-  initCanvas();
   game.update();
   game.draw();
 }
@@ -27,6 +26,7 @@ function initCanvas()
   var ctx = canvas.getContext("2d");
   document.body.appendChild(canvas);
   gameNs.ctx = ctx;
+
 
   document.addEventListener("keydown", this.keyHandler, true);
 }
