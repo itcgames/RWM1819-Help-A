@@ -66,7 +66,9 @@ highLightS()
   gameNs.ctx.stroke();
 }
 
-highLightD()
+
+
+highLightR()
 {
   gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
@@ -78,6 +80,16 @@ highLightD()
   gameNs.ctx.rect(1070,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "green";
+  gameNs.ctx.stroke();
+}
+
+highlightR()
+{
+  gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
+  gameNs.ctx.beginPath();
+  gameNs.ctx.rect(670,410,125,145);
+  gameNs.ctx.lineWidth="6";
+  gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
 }
 
@@ -93,8 +105,8 @@ highLightSpace()
 
   update()
   {
-    var canvas = document.getElementById('gameCanvas');
-    var ctx = canvas.getContext('2d');
+    var canvas = document.getElementById('mycanvas');
+    var ctx = mycanvas.getContext('2d');
   }
 
   render()

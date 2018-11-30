@@ -50,6 +50,10 @@ function keyHandler(e)
   {
     gameNs.helpScreen.highLightD()
   }
+  else if(e.keyCode === 82)
+  {
+    gameNs.helpScreen.highLightR()
+  }
   else if(e.keyCode === 32)
   {
     gameNs.helpScreen.highLightSpace()
