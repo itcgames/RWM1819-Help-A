@@ -66,9 +66,7 @@ highLightS()
   gameNs.ctx.stroke();
 }
 
-
-
-highLightR()
+highLightD()
 {
   gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
@@ -77,7 +75,7 @@ highLightR()
   gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(1070,560,125,145);
+  gameNs.ctx.rect(1080,560,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "green";
   gameNs.ctx.stroke();
@@ -87,7 +85,7 @@ highlightR()
 {
   gameNs.ctx.clearRect(0,0,mycanvas.width, mycanvas.height)
   gameNs.ctx.beginPath();
-  gameNs.ctx.rect(670,410,125,145);
+  gameNs.ctx.rect(730,410,125,145);
   gameNs.ctx.lineWidth="6";
   gameNs.ctx.strokeStyle = "red";
   gameNs.ctx.stroke();
