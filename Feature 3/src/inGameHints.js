@@ -20,9 +20,21 @@ class inGameHints
 
   }
 
-  DisplayHints()
+  DisplayRightHints()
   {
     this.display = true;
+  }
+  DisplayLeftHints()
+  {
+
+  }
+  DisplayTopHints()
+  {
+
+  }
+  DisplayBottomHints()
+  {
+
   }
 
   render()
