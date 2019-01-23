@@ -22,7 +22,6 @@ class hintsAndTips
       ]
     gameNs.hintNum = "Hint #"+(gameNs.count)
     gameNs.hints = gameNs.hintsArr[gameNs.count].hint
-
   }
 
   nextHint()
@@ -74,8 +73,8 @@ class hintsAndTips
       document.body.style.background = "#FFFACD";
       ctx.font = '45px Adventure';
       ctx.fillStyle = "Black"
-      ctx.fillText(gameNs.hints, 300,650)
-      ctx.fillText(gameNs.hintNum, 800,350)
+      ctx.fillText(gameNs.hints, 100,650)
+      ctx.fillText(gameNs.hintNum, 200,350)
     }
 
   }

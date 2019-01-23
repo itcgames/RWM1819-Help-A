@@ -16,6 +16,7 @@ class levelTips
     this.wall = true
     this.breakwall = false
     this.goalwall = false;
+    this.spacePressed = false
     this.tipsCount = 0
     this.tipsArr =[
         {
@@ -26,6 +27,9 @@ class levelTips
         },
         {
           "Tips":"The player aims to find the goal which is hidden underneath a broken wall"
+        },
+        {
+          "Tips":"Pressing the Space button will place a bomb"
         }
       ]
     this.tips = this.tipsArr[this.tipsCount].Tips
@@ -66,8 +70,13 @@ class levelTips
       this.tipsCount +=1
       this.tips = (this.tipsArr[this.tipsCount].Tips)
     }
-    else if(this.display === false)
+    else if(gameNs.display === false)
     {
+      ctx.clearRect(0,0,canvas.width, canvas.height)
+      this.tipsCount+=1
+      this.tips = (this.tipsArr[this.tipsCount].Tips)
+    }
+    else if (this.spacePressed === true){
       ctx.clearRect(0,0,canvas.width, canvas.height)
     }
   }
@@ -83,8 +92,11 @@ class levelTips
       var image = this.tipsImg
       ctx.font = '38px Adventure';
       ctx.fillStyle = "Black"
-      ctx.fillText(this.tips, 300,950)
-      ctx.drawImage(image,400,700,200,200)
+      ctx.fillText(this.tips, 100,1100)
+      ctx.drawImage(image,400,850,200,200)
+    }
+    else if (gameNs.display===false && this.spacePressed === false) {
+      ctx.fillText(this.tips, 100,1100)
     }
   }
 }
