@@ -52,25 +52,25 @@ class levelTips
     if(this.wall === true)
     {
       ctx.clearRect(0,0,canvas.width, canvas.height)
-      this.tipsImg.src = "img/wall.png"
+      this.tipsImg.src = "img/Assets/Assets/borderWall.png"
       this.tips = (this.tipsArr[this.tipsCount].Tips)
 
     }
     else if(this.breakwall === true)
     {
       ctx.clearRect(0,0,canvas.width, canvas.height)
-      this.tipsImg.src = "img/breakwall.png"
+      this.tipsImg.src = "img/Assets/Assets/destructableWall.png"
       this.tipsCount +=1
       this.tips = (this.tipsArr[this.tipsCount].Tips)
     }
     else if(this.goalwall === true)
     {
     ctx.clearRect(0,0,canvas.width, canvas.height)
-      this.tipsImg.src = "img/goal.png"
+      this.tipsImg.src = "img/Assets/Assets/exit.png"
       this.tipsCount +=1
       this.tips = (this.tipsArr[this.tipsCount].Tips)
     }
-    else if(gameNs.display === false)
+    else if(gameNs.display === false && this.tipsCount<3)
     {
       ctx.clearRect(0,0,canvas.width, canvas.height)
       this.tipsCount+=1
@@ -92,11 +92,11 @@ class levelTips
       var image = this.tipsImg
       ctx.font = '38px Adventure';
       ctx.fillStyle = "Black"
-      ctx.fillText(this.tips, 100,1100)
-      ctx.drawImage(image,400,850,200,200)
+      ctx.fillText(this.tips, 100,900)
+      ctx.drawImage(image,1000,400,200,200)
     }
     else if (gameNs.display===false && this.spacePressed === false) {
-      ctx.fillText(this.tips, 100,1100)
+      ctx.fillText(this.tips, 100,900)
     }
   }
 }
